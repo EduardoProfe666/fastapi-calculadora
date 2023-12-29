@@ -1,0 +1,106 @@
+# Pruebas de todos los endpoints de la Api Calculadora Simple
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/sumar/?num1=12.1&num2=12.2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/restar/?num1=12.1&num2=12.2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/multiplicar/?num1=12.1&num2=12.2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/dividir/?num1=12.1&num2=12.2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/modulo/?num1=12.1&num2=12.2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/raiz/?radicando=16&radical=2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/potenciacion/?base=2&exponente=2
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/logaritmo/?base=2&argumento=16
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/logaritmo-natural/?argumento=34
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/seno/2.3
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/coseno/2.3
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/tangente/2.3
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/cotangente/2.3
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/secante/2.3
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/cosecante/2.3
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/constantes/euler
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/constantes/e
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/constantes/pi
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/calcular
+Accept: application/json
+Content-Type: application/json
+
+{
+    "expr": "(54+34)/(23*65)"
+}
+
+###
