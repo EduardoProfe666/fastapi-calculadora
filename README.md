@@ -2,7 +2,7 @@
 Api de Calculadora Simple desarrollada con FastApi 🚀
 
 ## 💠 Instalación del proyecto
-1. Instalar los requerimientos necesarios con `pip install -r requeriments.txt`
+1. Instalar los requerimientos necesarios con `pip install -r requirements.txt`
 2. Usar el comando `uvicorn main:app --reload` para probar el proyecto
 3. Acceder a `localhost:8000/docs` para obtener la documentación de todos los endpoints y poder probarlos
 4. Puede probar los endpoints con los tests disponibles en el fichero `test_main.http`
@@ -46,4 +46,4 @@ Api de Calculadora Simple desarrollada con FastApi 🚀
 - `POST (...)/calcular`: Calcular la expresión dada
 
 ## 🛫 Despliegue como Web-Service en `render.com`
-Acceda al [siguiente enlace]() para probar la api en vivo
+Acceda al [siguiente enlace](https://fastapi-calculadora.onrender.com) para probar la api en vivo
