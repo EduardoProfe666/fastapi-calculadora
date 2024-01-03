@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Error {{codigo}}</title>
+    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+    <link href="{{ url_for('static', path='/error.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/bootstrap.min.css') }}" rel="stylesheet">
+
+</head>
+<body>
+<link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+<main   >
+
+        <!-- Error Page -->
+            <div class="error">
+                <div class="container-floud">
+                    <div class="col-xs-12 ground-color text-center">
+                        <div class="container-error-404">
+                            <div class="clip"><div class="shadow"><span class="digit thirdDigit">{{third_digit}}</span></div></div>
+                            <div class="clip"><div class="shadow"><span class="digit secondDigit">{{second_digit}}</span></div></div>
+                            <div class="clip"><div class="shadow"><span class="digit firstDigit">{{first_digit}}</span></div></div>
+                            <div class="msg">Ups!<span class="triangle"></span></div>
+                        </div>
+                        <h2 class="h1">{{mensaje}}</h2>
+                    </div>
+                </div>
+            </div>
+</main>
+<script  src="{{ url_for('static', path='/error1.js') }}"></script>
+
+</body>
+</html>

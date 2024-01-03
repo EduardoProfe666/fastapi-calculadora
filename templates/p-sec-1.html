@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{{titulo}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
+<link href="{{ url_for('static', path='/p-sec.css') }}" rel="stylesheet">
+
+</head>
+<body>
+<div class="cursor"></div>
+<div class="shapes">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+</div>
+<div class="content">
+  <h1>{{titulo}}</h1>
+</div>
+<script  src="{{ url_for('static', path='/gsap-latest-beta.min.js') }}"></script>
+<script  src="{{ url_for('static', path='/p-sec-1.js') }}"></script>
+
+</body>
+</html>
