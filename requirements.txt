@@ -3,3 +3,4 @@ uvicorn[standard]>=0.25.0
 jinja2>=3.1.2
 pydantic~=2.5.3
 starlette~=0.32.0.post1
+requests>=0
