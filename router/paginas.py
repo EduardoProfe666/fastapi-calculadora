@@ -9,9 +9,9 @@ templates = Jinja2Templates(directory="templates")
 
 @router.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-
     return templates.TemplateResponse("index.html", {
-        "request": request
+        "request": request,
+        "base": str(request.base_url)
     })
 
 
@@ -55,3 +55,9 @@ async def root(request: Request):
     })
 
 
+@router.get("/estadisticas", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("p-sec-1.html", {
+        "request": request,
+        "titulo": "Estadísticas"
+    })

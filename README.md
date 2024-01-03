@@ -48,6 +48,17 @@ Api de Calculadora Simple desarrollada con FastApi
 - Descuento
 - IMC
 
+### 📈 Estadística
+- Media
+- Mediana
+- Multi-Moda
+- Desviación Estándar de la población
+- Desviación Estándar de la muestra
+- Varianza de la población
+- Varianza de la muestra
+- Correlación
+- Covarianza
+
 ### 🎈 Otros
 - Constantes
 

@@ -8,6 +8,7 @@ from router.trigonometria import router as trigonometria
 from router.calculadora import router as calculadora
 from router.conversion import router as conversion
 from router.paginas import router as paginas
+from router.estadisticas import router as estadisticas
 
 # Run with uvicorn main:app --reload
 
@@ -49,6 +50,17 @@ description = """
 - Descuento
 - IMC
 
+### 📈 Estadística
+- Media
+- Mediana
+- Multi-Moda
+- Desviación Estándar de la población
+- Desviación Estándar de la muestra
+- Varianza de la población
+- Varianza de la muestra
+- Correlación
+- Covarianza
+
 ### 🎈 Otros
 - Constantes
 """
@@ -56,7 +68,7 @@ description = """
 app = FastAPI(title="Api Calculadora Simple",
               description=description,
               summary="Api de Calculadora simple desarrollada con FastApi 🚀",
-              version="1.0.1",
+              version="1.0.2",
               contact={
                   "name": "Eduardo González",
                   "url": "https://github.com/EduardoProfe666",
@@ -75,6 +87,7 @@ app.include_router(calculo_basico)
 app.include_router(calculadora)
 app.include_router(trigonometria)
 app.include_router(conversion)
+app.include_router(estadisticas)
 app.include_router(otros)
 app.include_router(paginas)
 
@@ -103,6 +116,18 @@ async def http_exceptio_422(request, exc):
     }, status_code=422)
 
 
+@app.exception_handler(500)
+async def http_exceptio_500(request, exc):
+    return templates.TemplateResponse("error.html", {
+        "request": request,
+        "first_digit": "5",
+        "second_digit": "0",
+        "third_digit": "0",
+        "codigo": "500",
+        "mensaje": 'Error Interno. Intente más tarde.'
+    }, status_code=500)
+
+
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):
     codigo = str(exc.status_code)
@@ -114,3 +139,4 @@ async def http_exception_handler(request, exc):
         "codigo": codigo,
         "mensaje": exc.detail
     }, status_code=exc.status_code)
+
