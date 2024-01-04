@@ -1,25 +1,600 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
-    <title>Api Calculadora Simple</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
-</head>
-<body>
-<div class="centrado">
-<h1 class="inicio">🚀 Api de Calculadora Simple con FastApi 🚀</h1>
-<h2 class="inicio">Documentación</h2>
-<p>Para acceder a la documentación de la api ingrese en cualquiera de las siguientes opciones:</p>
-    <ul>
-    <li><a href="{{ base + 'docs' }}">Swagger</a></li>
-    <li><a href="{{ base + 'redoc'}}">Redocly</a></li>
-    </ul>
-<h2 class="inicio">Repositorio en Github</h2>
-<p>Para ver el código fuente acceda al <a href="https://github.com/EduardoProfe666/fastapi-calculadora">siguiente enlace</a></p>
-<footer><a  class="foo" href="https://github.com/EduardoProfe666">EduardoProfe666🎩</a></footer>
-</div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://fastapi.tiangolo.com/img/favicon.png"
+    />
+    <meta name="description" content="Inicio de Fastapi Calculadora Simple" />
+    <meta name="author" content="EduardoProfe666🎩" />
+
+    <meta property="og:title" content="FastApi Calculadora Simple | EduardoProfe666🎩">
+    <meta property="og:description" content="FCS es una api con varias funcionalidades agregadas como cálculo básico, trigonometría, estadística, conversores, divisas, entre otros. Está implementada en Python con el framework FastApi.">
+    <meta property="og:image" content="{{ url_for('static', path='/banner.png') }}">
+    <meta property="og:url" content="{{ base }}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>FastApi Calculadora Simple | EduardoProfe666🎩</title>
+    <!--
+
+Lava Landing Page
+
+https://templatemo.com/tm-540-lava-landing-page
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', path='css/bootstrap.min.css') }}"
+    />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/font-awesome.css') }}"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='css/templatemo-lava.css') }}" />
+
+    <link rel="stylesheet" href="{{ url_for('static', path='css/owl-carousel.css') }}" />
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+      <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="https://github.com/EduardoProfe666/fastapi-calculadora" class="logo"> Calculadora API </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li class="scroll-to-section">
+                  <a href="#inicio" class="menu-item">Inicio</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#funcionalidades" class="menu-item"
+                    >Funcionalidades</a
+                  >
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#docs" class="menu-item">Docs</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#comunidad" class="menu-item">Comunidad</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#contactame" class="menu-item">Contáctame</a>
+                </li>
+              </ul>
+              <a class="menu-trigger">
+                <span>Menú</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="inicio">
+      <!-- ***** Header Text Start ***** -->
+      <div class="header-text">
+        <div class="container">
+          <div class="row">
+            <div
+              class="left-text col-lg-9 col-md-12 col-sm-12 col-xs-12"
+              data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+            >
+              <a href="https://github.com/EduardoProfe666/fastapi-calculadora"><h1>FastApi <em>Calculadora</em> Simple</h1></a>
+              <p>
+                FCS es una api con varias funcionalidades agregadas como cálculo
+                básico, trigonometría, estadística, conversores, divisas, entre
+                otros. Está implementada en Python con el framework
+                <a href="https://github.com/tiangolo/fastapi">FastApi</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+    <div class="left-image-decor"></div>
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="funcionalidades">
+      <div class="container">
+        <div class="row">
+          <div
+            class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+            data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+          >
+            <img
+              src="{{ url_for('static', path='images/left-image.gif') }}"
+              class="rounded img-fluid d-block mx-auto"
+              alt="App"
+            />
+          </div>
+          <div
+            class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix"
+          >
+            <ul>
+              <li
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
+              >
+                <img src="{{ url_for('static', path='images/about-icon-01.png') }}" alt="" />
+                <div class="text">
+                  <h4>Cálculo básico</h4>
+                  <p>
+                    Las principales operaciones disponibles son sumar, restar,
+                    multiplicar, dividir, módulo, radicalización, potenciación y
+                    logaritmación
+                  </p>
+                </div>
+              </li>
+              <li
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.5s"
+              >
+                <img src="{{ url_for('static', path='images/about-icon-02.png') }}" alt="" />
+                <div class="text">
+                  <h4>Conversión</h4>
+                  <p>
+                    Las principales conversiones disponibles son ángulo, área,
+                    datos, longitud, masa, velocidad, sistema numérico,
+                    temperatura, tiempo, volumen y divisas
+                  </p>
+                </div>
+              </li>
+              <li
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.6s"
+              >
+                <img src="{{ url_for('static', path='images/about-icon-03.png') }}" alt="" />
+                <div class="text">
+                  <h4>Trigonometría</h4>
+                  <p>
+                    Las principales operaciones disponibles son seno, coseno,
+                    tangente, cotangente, secante y cosecante
+                  </p>
+                </div>
+              </li>
+              <li
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.6s"
+              >
+                <img src="{{ url_for('static', path='images/about-icon-03.png') }}" alt="" />
+                <div class="text">
+                  <h4>Calculadoras</h4>
+                  <p>
+                    Las principales operaciones disponibles son evaluación y
+                    cálculo de expresiones, cálculo de descuento y calculadora
+                    de IMC
+                  </p>
+                </div>
+              </li>
+              <li
+                data-scroll-reveal="enter right move 30px over 0.6s after 0.6s"
+              >
+                <img src="{{ url_for('static', path='images/about-icon-03.png') }}" alt="" />
+                <div class="text">
+                  <h4>Estadística</h4>
+                  <p>
+                    Las principales operaciones disponibles son media, mediana,
+                    multi-moda, desviación estándar y varianza (población y
+                    muestra), correlación y covarianza
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="docs">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+            data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+          >
+            <div class="features-item">
+              <div class="features-icon">
+                <a href="{{ base + 'docs'}}">
+                <h2>1</h2>
+                <img src="{{ url_for('static', path='images/features-icon-1.png') }}" alt="" />
+                <h4>Swagger UI</h4>
+                  </a>
+                <p>
+                  Documentación generada automáticamente que permite probar
+                  todos los endpoints disponibles.
+                  <br>
+                  La ruta es <a href="{{ base + 'docs' }}">/docs</a>
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+            data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
+          >
+            <div class="features-item">
+              <div class="features-icon">
+                <a href="{{ base + 'redoc'}}">
+                <h2>2</h2>
+                <img src="{{ url_for('static', path='images/features-icon-2.png') }}" alt="" />
+                <h4>Redocly</h4></a>
+                <p>
+                  Documentación generada automáticamente por Redocly y FastApi.
+                  <br>
+                  La ruta es <a href="{{ base + 'redoc' }}">/redoc</a>
+                </p>
+              </div>
+            </div>
+              </a>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+            data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
+          >
+            <div class="features-item">
+              <div class="features-icon">
+                <a href="{{ base + 'openapi.json' }}">
+                <h2>3</h2>
+                <img src="{{ url_for('static', path='images/features-icon-3.png') }}" alt="" />
+                <h4>Open Api</h4>
+                </a>
+                <p>
+                  Especificación Open Api de la api. Contiene todos los detalles
+                  reglamentados por la especificación.
+                  <br>
+                  La ruta es <a href="{{ base + 'openapi.json' }}">/openapi.json</a>
+                </p>
+              </div>
+            </div>
+              </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <div class="right-image-decor"></div>
+
+    <!-- ***** comunidad Starts ***** -->
+    <section class="section" id="comunidad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="center-heading">
+              <h2>Qué piensa la <em>comunidad</em> de la <em>API</em></h2>
+              <p>
+                Las siguientes opiniones no son pagadas ni coercionadas. Los
+                usuarios tienen la libre facultad de opinar sobre la api.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
+            data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+          >
+            <div class="owl-carousel owl-theme">
+              <div class="item service-item">
+                <div class="author">
+                  <i
+                    ><img src="{{ url_for('static', path='images/author-1.png') }}" alt="Author One"
+                  /></i>
+                </div>
+                <div class="testimonial-content">
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <h4>Alberto Prieto</h4>
+                  <p>
+                    “Simplemente genial. Se comporta de la manera correcta. Es
+                    fácil de usar, intuitiva y rápida. Magnífica elección de
+                    FastApi.”
+                  </p>
+                  <span>Programador Junior</span>
+                </div>
+              </div>
+              <div class="item service-item">
+                <div class="author">
+                  <i
+                    ><img src="{{ url_for('static', path='images/author-2.png') }}" alt="Second Author"
+                  /></i>
+                </div>
+                <div class="testimonial-content">
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <h4>Martino Tino</h4>
+                  <p>
+                    “Impressive. I love it. Just miss documentation in english
+                    but i managed to setup google translator.”
+                  </p>
+                  <span>Programador Senior</span>
+                </div>
+              </div>
+              <div class="item service-item">
+                <div class="author">
+                  <i
+                    ><img src="{{ url_for('static', path='images/author-3.png') }}" alt="Author Third"
+                  /></i>
+                </div>
+                <div class="testimonial-content">
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <h4>Liliana Velazquez</h4>
+                  <p>
+                    “Muy buena. Buen trabajo. Aunque a veces se demora un poco
+                    en dar respuestas. Imagino sea pq está implementada en
+                    render.com con el paquete free.”
+                  </p>
+                  <span>Estudiante</span>
+                </div>
+              </div>
+              <div class="item service-item">
+                <div class="author">
+                  <i
+                    ><img src="{{ url_for('static', path='images/author-4.png') }}" alt="Fourth Author"
+                  /></i>
+                </div>
+                <div class="testimonial-content">
+                  <ul class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                  </ul>
+                  <h4>Coco Sanchez</h4>
+                  <p>
+                    "No está mal. En papel todo funciona, pero no he podido
+                    hacer que funcionen algunos endpoints..."
+                  </p>
+                  <span>Programador Junior</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** comunidad Ends ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <footer id="contactame">
+      <div class="container">
+        <div class="footer-content">
+          <div class="row">
+            <!-- ***** Contact Form Start ***** -->
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <div class="contact-form">
+                <form id="contact" action="" method="post">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <fieldset>
+                        <input
+                          name="name"
+                          type="text"
+                          id="name"
+                          placeholder="Nombre Completo"
+                          required=""
+                          style="background-color: rgba(250, 250, 250, 0.3)"
+                        />
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <fieldset>
+                        <input
+                          name="email"
+                          type="text"
+                          id="email"
+                          placeholder="Dirección de Correo"
+                          required=""
+                          style="background-color: rgba(250, 250, 250, 0.3)"
+                        />
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <textarea
+                          name="message"
+                          rows="6"
+                          id="message"
+                          placeholder="Tu mensaje"
+                          required=""
+                          style="background-color: rgba(250, 250, 250, 0.3)"
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button
+                          type="submit"
+                          id="form-submit"
+                          class="main-button"
+                        >
+                          Enviar Mensaje Ahora
+                        </button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- ***** Contact Form End ***** -->
+            <div class="right-content col-lg-6 col-md-12 col-sm-12">
+              <h2>Más sobre <em>mí</em></h2>
+              <p>
+                Soy un Estudiante de 3er año (inicios 2024) de Ingeniería
+                Informática de la Universidad Tecnológica de La Habana José
+                Antonio Hecheverría (CUJAE). Soy desarrollador Full Stack y
+                miembro activo de <em>Error404</em>.
+              </p>
+              <ul class="social">
+                <li>
+                  <a href="https://github.com/EduardoProfe666"
+                    ><i class="fa fa-github"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://eduardoprofe666.github.io/"><i class="fa fa-suitcase"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/eduardoglez02/"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/eduardo-gonzalez-23003628a"><i class="fa fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="sub-footer">
+              <p>
+                Copyright &copy; 2024 FastApi Calculadora Simple | Desarrollado con 💛
+                por
+                <a target="_blank" href="https://github.com/EduardoProfe666"
+                  >EduardoProfe666🎩</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', path='js/jquery-2.1.0.min.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', path='js/popper.js') }}"></script>
+    <script src="{{ url_for('static', path='js/bootstrap.min.js') }}"></script>
+
+    <!-- Plugins -->
+    <script src="{{ url_for('static', path='js/owl-carousel.js') }}"></script>
+    <script src="{{ url_for('static', path='js/scrollreveal.min.js') }}"></script>
+    <script src="{{ url_for('static', path='js/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', path='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', path='js/imgfix.min.js') }}"></script>
+
+    <!-- Global Init -->
+    <script src="{{ url_for('static', path='js/custom.js') }}"></script>
+    <script>
+      configObj = {
+        buttonD:
+          "M8 17.333h5.333v4C13.333 22.806 14.527 24 16 24c1.473 0 2.667-1.194 2.667-2.667v-4H24L16 8l-8 9.333z",
+        buttonT:
+          "translate(-1088 -172) translate(832 140) translate(32 32) translate(224)",
+        shadowSize:
+          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        roundnessSize: "16px",
+        buttonDToBottom: "32px",
+        buttonDToRight: "32px",
+        selectedBackgroundColor: "#ffb30b",
+        selectedIconColor: "#626a7e",
+        buttonWidth: "56px",
+        buttonHeight: "56px",
+        svgWidth: "48px",
+        svgHeight: "48px",
+      };
+      function createButton(obj, pageSimulator) {
+        const body = document.querySelector("body");
+        backToTopButton = document.createElement("span");
+        backToTopButton.classList.add("softr-back-to-top-button");
+        backToTopButton.id = "softr-back-to-top-button";
+        pageSimulator
+          ? pageSimulator.appendChild(backToTopButton)
+          : body.appendChild(backToTopButton);
+        backToTopButton.style.width = obj.buttonWidth;
+        backToTopButton.style.height = obj.buttonHeight;
+        backToTopButton.style.marginRight = obj.buttonDToRight;
+        backToTopButton.style.marginBottom = obj.buttonDToBottom;
+        backToTopButton.style.borderRadius = obj.roundnessSize;
+        backToTopButton.style.boxShadow = obj.shadowSize;
+        backToTopButton.style.color = obj.selectedBackgroundColor;
+        backToTopButton.style.backgroundColor = obj.selectedBackgroundColor;
+        pageSimulator
+          ? (backToTopButton.style.position = "absolute")
+          : (backToTopButton.style.position = "fixed");
+        backToTopButton.style.outline = "none";
+        backToTopButton.style.bottom = "0px";
+        backToTopButton.style.right = "0px";
+        backToTopButton.style.cursor = "pointer";
+        backToTopButton.style.textAlign = "center";
+        backToTopButton.style.border = "solid 2px currentColor";
+        backToTopButton.innerHTML =
+          '<svg class="back-to-top-button-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" > <g fill="none" fill-rule="evenodd"> <path d="M0 0H32V32H0z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> <path class="back-to-top-button-img" fill-rule="nonzero" d="M11.384 13.333h9.232c.638 0 .958.68.505 1.079l-4.613 4.07c-.28.246-.736.246-1.016 0l-4.613-4.07c-.453-.399-.133-1.079.505-1.079z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> </g> </svg>';
+        backToTopButtonSvg = document.querySelector(".back-to-top-button-svg");
+        backToTopButtonSvg.style.verticalAlign = "middle";
+        backToTopButtonSvg.style.margin = "auto";
+        backToTopButtonSvg.style.justifyContent = "center";
+        backToTopButtonSvg.style.width = obj.svgWidth;
+        backToTopButtonSvg.style.height = obj.svgHeight;
+        backToTopButton.appendChild(backToTopButtonSvg);
+        backToTopButtonImg = document.querySelector(".back-to-top-button-img");
+        backToTopButtonImg.style.fill = obj.selectedIconColor;
+        backToTopButtonSvg.appendChild(backToTopButtonImg);
+        backToTopButtonImg.setAttribute("d", obj.buttonD);
+        backToTopButtonImg.setAttribute("transform", obj.buttonT);
+        if (!pageSimulator) {
+          backToTopButton.style.display = "none";
+          window.onscroll = function () {
+            if (
+              document.body.scrollTop > 20 ||
+              document.documentElement.scrollTop > 20
+            ) {
+              backToTopButton.style.display = "block";
+            } else {
+              backToTopButton.style.display = "none";
+            }
+          };
+          backToTopButton.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          };
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        createButton(configObj, null);
+      });
+    </script>
+  </body>
 </html>
