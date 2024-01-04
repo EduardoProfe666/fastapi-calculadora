@@ -5,3 +5,5 @@ pydantic~=2.5.3
 starlette~=0.32.0.post1
 requests
 statistics
+fastapi_mail
+python-multipart
